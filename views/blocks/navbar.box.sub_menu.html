@@ -1,0 +1,71 @@
+  <div class="navbar navbar-toggleable-sm flex-row align-items-center">
+        <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left hidden-lg-up">
+          <i class="material-icons">&#xe5d2;</i>
+        </a>
+        <div ui-include="'views/blocks/navbar.box.logo.html'"></div>
+
+        <!-- navbar collapse -->
+        <div class="collapse navbar-collapse" id="navbar-4">
+          <!-- link and dropdown -->
+          <ul class="nav navbar-nav m-r text-primary-hover">
+            <li class="nav-item pos-stc">
+              <a ui-sref="app.account.info" class="nav-link">
+                <span>Tài khoản</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a ui-sref="app.character.info" class="nav-link">
+                <span>Nhân vật</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown dropdown-submenu">
+              <a class="nav-link dropdown-toggle" href data-toggle="dropdown">
+                <span>Ngân hàng</span>
+              </a>
+              <div ui-include="'views/blocks/dropdown.sub.html'"></div>
+            </li>
+            <li class="nav-item dropdown dropdown-submenu">
+              <a class="nav-link dropdown-toggle" href data-toggle="dropdown">
+                <span>Events</span>
+              </a>
+              <div ui-include="'views/blocks/dropdown.sub.html'"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- / navbar collapse -->
+
+
+        <!-- nabar -->
+        <ul class="nav navbar-nav flex-row align-items-center ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href>
+              <i class="material-icons">&#xe877;</i>
+              <span class="label up p-a-0 primary"></span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href class="nav-link" data-toggle="dropdown">
+              <i class="material-icons">&#xe5c3;</i>
+              <span class="label up p-a-0 accent"></span>
+            </a>
+            <div ui-include="'views/blocks/dropdown.grid.html'"></div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href class="nav-link" data-toggle="dropdown">
+              <i class="material-icons">&#xe7f5;</i>
+              <span class="label up p-a-0 warn"></span>
+            </a>
+            <div ui-include="'views/blocks/dropdown.notification.html'"></div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href class="nav-link dropdown-toggle text-ellipsis" data-toggle="dropdown">
+              <span class="avatar w-32">
+                <img src="assets/images/a2.jpg" alt="...">
+                <i class="busy b-white right"></i>
+              </span>
+            </a>
+            <div ui-include="'views/blocks/dropdown.user.html'"></div>
+          </li>
+        </ul>
+        <!-- / navbar -->
+  </div>

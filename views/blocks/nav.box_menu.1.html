@@ -1,0 +1,39 @@
+
+<ul class="nav" ui-nav  ng-if="isLogin == false">
+    <li class="nav-header hidden-folded">
+      <small class="text-muted">Main</small>
+    </li>
+
+    <li ui-sref-active="active">
+      <a ui-sref="app.login">
+        <span class="nav-icon">
+          <i class="material-icons">&#xe851;
+            <span ui-include="'assets/images/i_0.svg'"></span>
+          </i>
+        </span>
+        <span class="nav-text">Đăng nhập</span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a ui-sref="app.register">
+        <span class="nav-icon">
+          <i class="material-icons">&#xe873;
+            <span ui-include="'assets/images/i_0.svg'"></span>
+          </i>
+        </span>
+        <span class="nav-text">Đăng ký</span>
+      </a>
+    </li>
+
+    <!--<li ui-sref-active="active">-->
+      <!--<a ui-sref="app.dashboard">-->
+        <!--<span class="nav-icon">-->
+          <!--<i class="material-icons">&#xe3fc;-->
+            <!--<span ui-include="'assets/images/i_0.svg'"></span>-->
+          <!--</i>-->
+        <!--</span>-->
+        <!--<span class="nav-text">Dashboard</span>-->
+      <!--</a>-->
+    <!--</li>-->
+  </ul>

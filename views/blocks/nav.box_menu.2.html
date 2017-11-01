@@ -1,0 +1,157 @@
+<ul class="nav" ui-nav ng-if="isLogin" id="menu-bar">
+    <li ui-sref-active="active">
+        <a ui-sref="app.account.info">
+        <span class="nav-icon">
+          <i class="material-icons">&#xe853;
+          </i>
+        </span>
+            <span class="nav-text">Tài khoản</span>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a ui-sref="app.character.info">
+        <span class="nav-icon">
+          <i class="material-icons">&#xe7fd;
+          </i>
+        </span>
+            <span class="nav-text">Nhân vật</span>
+        </a>
+    </li>
+
+    <li>
+        <a>
+        <span class="nav-caret">
+          <i class="fa fa-caret-down"></i>
+        </span>
+            <!--<span class="nav-label">-->
+            <!--<b class="label rounded label-sm {{app.setting.theme.warn}}">5</b>-->
+            <!--</span>-->
+            <span class="nav-icon">
+          <i class="fa fa-bank">
+          </i>
+        </span>
+            <span class="nav-text">Ngân hàng</span>
+        </a>
+        <ul class="nav-sub">
+            <li ui-sref-active="active">
+                <a ui-sref="app.bank.info">
+                    <span class="nav-text">Kiểm tra tài khoản
+                        <span class="nav-label">
+                            <b class="label label-sm accent"><i class="fa fa-star"></i></b>
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.bank.change-money">
+                    <span class="nav-text">Chuyển đổi tiền tệ</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.bank.transfer">
+                    <span class="nav-text">Chuyển khoản</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.bank.item-sliver">
+                    <span class="nav-text">Mua / Bán Item Bạc</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.bank.jewel-action">
+                    <span class="nav-text">Gửi/Rút Ngọc, Zen</span>
+                </a>
+            </li>
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="app.todo">-->
+                    <!--<span class="nav-text">Đổi ngọc Sáng Tạo</span>-->
+                <!--</a>-->
+            <!--</li>-->
+        </ul>
+    </li>
+
+    <li>
+        <a>
+        <span class="nav-caret">
+          <i class="fa fa-caret-down"></i>
+        </span>
+            <!--<span class="nav-label">-->
+            <!--<b class="label rounded label-sm {{app.setting.theme.warn}}">5</b>-->
+            <!--</span>-->
+            <span class="nav-icon">
+          <i class="material-icons">&#xe878;
+          </i>
+        </span>
+            <span class="nav-text">Events</span>
+        </a>
+        <ul class="nav-sub">
+            <li ui-sref-active="active">
+                <a ui-sref="app.event.check-in">
+                    <span class="nav-text">Báo danh nhận thưởng
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a>
+        <span class="nav-caret">
+          <i class="fa fa-caret-down"></i>
+        </span>
+            <!--<span class="nav-label">-->
+            <!--<b class="label rounded label-sm {{app.setting.theme.warn}}">5</b>-->
+            <!--</span>-->
+            <span class="nav-icon">
+          <i class="fa fa-fw fa-shopping-cart">
+          </i>
+        </span>
+            <span class="nav-text">Web Shop</span>
+        </a>
+        <ul class="nav-sub">
+            <li ui-sref-active="active">
+                <a ui-sref="app.shop.ware-house">
+                    <span class="nav-text">Hòm đồ cá nhân
+                    </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.shop.super-market">
+                    <span class="nav-text">Chợ trời</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.shop.shop-online">
+                    <span class="nav-text">Web Shop</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li ui-sref-active="active">
+        <a ui-sref="app.account.info">
+            <!--<span class="nav-label">-->
+            <!--<b class="label rounded label-sm {{app.setting.theme.warn}}">5</b>-->
+            <!--</span>-->
+            <span class="nav-label">
+                <b class="label label-sm warn"><i class="fa fa-star"></i></b>
+            </span>
+            <span class="nav-icon">
+          <i class="fa fa-fw fa-credit-card">
+          </i>
+        </span>
+            <span class="nav-text">Nạp thẻ</span>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a ui-sref="app.account.info">
+        <span class="nav-icon">
+          <i class="fa fa-bar-chart-o">
+          </i>
+        </span>
+            <span class="nav-text">Xếp hạng</span>
+        </a>
+    </li>
+</ul>

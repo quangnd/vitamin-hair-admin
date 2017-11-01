@@ -1,0 +1,225 @@
+.box-avatar-char-choise {
+    display: block;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    border: 3px solid #faa602;
+}
+
+.select-char {
+    margin-left: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #428bca;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 90%
+}
+
+.select-char:hover {
+    background-color: #F0F0F0;
+}
+
+.character-name {
+    font-weight: 400;
+    font-size: 16px;
+    color: #651a00;
+}
+
+.content-character {
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 10px 0 15px;
+    display: table;
+    width: 90%;
+}
+
+.content-character:hover {
+    background-color: #F0F0F0;
+}
+
+.list-info {
+    width: 100%;
+    display: table;
+    font-size: 13px;
+    padding-bottom: 20px;
+    -webkit-padding-start: 0px !important;
+    -webkit-margin-before: 0em !important;
+    -webkit-margin-after: 0em !important;
+    -webkit-margin-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+}
+
+.list-col {
+    list-style-type: none;
+    width: 50%;
+    float: left;
+}
+
+.list-col:first-child .list-row {
+    border-right: none;
+}
+
+.list-row {
+    border-left: 1px dashed #c2c2c2;
+    border-bottom: 1px dashed #c2c2c2;
+    border-right: 1px dashed #c2c2c2;
+    width: 100%;
+    display: table;
+    line-height: 12px;
+}
+
+.list-row:first-child {
+    border-top: 1px dashed #c2c2c2;
+}
+
+.list-row:hover {
+    background-color: #f0f0f0;
+}
+
+.label-info2 {
+    text-indent: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 50%;
+    float: left;
+    padding: 8px 0;
+}
+
+.text-info2 {
+    color: #e97300;
+    font-weight: 300;
+    width: 50%;
+    float: left;
+    padding: 8px 0;
+    padding-left: 8px;
+}
+
+h2.box-character-name {
+    color: #e97300;
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    width: 174px;
+    padding-top: 15px;
+}
+
+.box-character-birthday {
+    font-size: 12px;
+    font-style: italic;
+    color: #939ba2;
+    text-transform: capitalize;
+    display: block;
+    text-align: center;
+}
+
+.avatar-style {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    border: 5px solid #faa602;
+}
+
+.btn-xs-custom {
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+.btn-default-custom {
+    text-shadow: 0 1px 0 #fff;
+    background-image: -webkit-linear-gradient(top, #fff 0, #e0e0e0 100%);
+    background-image: -o-linear-gradient(top, #fff 0, #e0e0e0 100%);
+    /* background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0)); */
+    /* background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%); */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);*/
+    background-repeat: repeat-x;
+    /*border-color: #dbdbdb;*/
+    border-color: #ccc;
+}
+
+.bank-hover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item-info-popover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.modal-scroll-item {
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.a:hover {
+    color: #bf5329;
+}
+.list-wraper {
+    overflow: hidden;
+    width: 100%;
+    /* border:1px solid red; */
+    padding:0;
+}
+.tuanle {
+    list-style: none;
+    /* border: 1px solid; */
+    overflow: hidden;
+    float: left;
+    width: 130px;
+    margin: 10px;
+}
+.popover {
+    max-width: 350px !important;
+}
+
+.item-list-boder {
+    border: 1px solid rgba(120, 130, 140, 0.13);
+    border-color: rgb(240, 173, 78);
+    border-top-width: 3px !important;
+    /* border-bottom-width: 2px !important; */
+    background-color: #ffffff
+}
+
+#customers {
+    /*font-size: 16px;*/
+    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#customers th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #2a2b3c;
+    color: white;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.modal-header-custom {
+    background-color: #2a2b3c !important;
+    color: white;
+}
