@@ -169,5 +169,14 @@
     "underscore": "~1.8.3",
     "venturocket-angular-slider": "~0.3.2",
     "waves": "~0.7.2"
+  },
+  "resolutions": {
+    "angular": "1.5.3",
+    "angular-touch": "1.5.3",
+    "jquery": ">=1.9.1",
+    "fullcalendar": "~2.7.1",
+    "moment": ">=2.10.5",
+    "tether": "^1.4.0",
+    "bootstrap": ">= 3.0.1"
   }
 }
