@@ -1,5 +1,5 @@
 <!-- aside -->
-<div id="aside" class="app-aside modal fade nav-expand" ng-class="{'folded': app.setting.folded}">
+<div id="aside" class="app-aside modal fade nav-expand" ng-class="{'folded': app.setting.folded}" ng-if="isLoggedIn">
     <div class="left navside black dk" layout="column">
         <div class="navbar no-radius">
             <div ui-include="'views/blocks/navbar.box.logo.html'"></div>
@@ -22,13 +22,14 @@
 
 <!-- content -->
 <div id="content" class="app-content box-shadow-z1" role="main">
-    <div class="app-header white box-shadow">
+    <div class="app-header white box-shadow" ng-if="isLoggedIn">
         <div ui-include="'views/blocks/navbar.box.sub_menu.html'"></div>
     </div>
+    <div ui-view class="app-body" id="view">
     <div class="app-footer">
         <div ui-include="'views/blocks/footer.html'"></div>
     </div>
-    <div class="app-body">
+    <!-- <div class="app-body">
         <div class="padding">
             <div class="row">
                 <div class="col-sm-8 col-lg-9">
@@ -39,12 +40,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <!-- / content -->
 
 <!-- theme switcher -->
-<div id="switcher">
+<div id="switcher" class="invisible">
     <div ui-include="'views/blocks/switcher.html'"></div>
 </div>
 <!-- / -->

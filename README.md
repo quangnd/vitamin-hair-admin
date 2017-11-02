@@ -8,6 +8,6 @@ A admin panel for vitamin-hair
 - Install dependencies: `bower install --force-latest`
 - Build dist with minified js and css: `grunt build`
 - Build: `npm run build`
-- Run: `npm start`
+- Run: `gulp watch`
 
 😎

@@ -37,9 +37,9 @@
             layout = 'views/layout/layout.'+l+'html';
             // dashboard = 'views/dashboard/dashboard.'+l+'html';
 
-        // $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
         $urlRouterProvider
-          .otherwise('/app/login');
+          .otherwise('/app/account/signin');
 
         $stateProvider
           .state('app', {
@@ -53,20 +53,28 @@
             resolve: load(['ui.bootstrap', 'scripts/controllers/bootstrap.js'])
           })
 
-            .state('app.register', {
-                url: '/register',
-                templateUrl: 'apps/account/register/register.html',
-                data : { title: 'Register' },
-                controller: "RegisterCtrl",
-                resolve: load('apps/account/register/register.js')
+            // .state('app.register', {
+            //     url: '/register',
+            //     templateUrl: 'apps/account/register/register.html',
+            //     data : { title: 'Register' },
+            //     controller: "RegisterCtrl",
+            //     resolve: load('apps/account/register/register.js')
+            // })
+
+            .state('app.dashboard', {
+                url: '/dashboard',
+                templateUrl: 'apps/dashboard.html',
+                data : { title: 'Dashboard' },
+                controller: "DashboardCtrl",
+                resolve: load('apps/dashboard.js')
             })
 
-            .state('app.login', {
-                url: '/login',
-                templateUrl: 'apps/account/login/login.html',
-                data : { title: 'Login' },
-                controller: "LoginCtrl",
-                resolve: load('apps/account/login/login.js')
+            .state('app.signin', {
+              url: '/signin',
+              templateUrl: 'apps/account/signin.html',
+              data: { title: 'Sign in' },
+              controller: "SigninCtrl",
+              resolve: load('apps/account/signin.js')
             })
 
             .state('app.forgot-pass', {
