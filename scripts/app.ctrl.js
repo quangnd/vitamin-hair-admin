@@ -22,7 +22,7 @@
         checkLogin();
         // config
         vm.app = {
-            name: 'Flatkit',
+            name: 'Vitamin Hair',
             version: '1.2.0',
             // for chart colors
             color: {
@@ -45,7 +45,7 @@
                     warn: 'warn'
                 },
                 folded: false,
-                boxed: true,
+                boxed: false,
                 container: false,
                 themeID: 1,
                 bg: ''
@@ -127,23 +127,11 @@
         }
 
         function checkLogin() {
-            var value = [];
-            value.isLogin = sessionStorage.getItem(LOCALSTORAGE_USER) || false;
-            $rootScope.isLogin = value.isLogin;
-
-            if ($rootScope.isLogin) {
-                $rootScope.user = JSON.parse(sessionStorage.getItem(LOCALSTORAGE_USER));
-                $rootScope.bankInfo = JSON.parse(sessionStorage.getItem(LOCALSTORAGE_BANKINFO));
-                $rootScope.listChar = get_list_char();
+            $rootScope.isLoggedIn = $window.localStorage.isLoggedIn;
+            if (!$rootScope.isLoggedIn) {
+                $state.go('app.signin');
             } else {
-                setTimeout(() => { $state.go('app.login') }, 0);
-            }
-
-            $rootScope.charChoose = JSON.parse(sessionStorage.getItem(LOCALSTORAGE_CHARCHOOSE));
-            
-            if ($rootScope.isLogin && $rootScope.charChoose === null) {
-                console.log('vao day');
-                $rootScope.charChoose = $rootScope.listChar[0];
+                $state.go('app.dashboard');
             }
         }
 
@@ -153,11 +141,9 @@
         };
 
         $scope.logout = function () {
-            cfpLoadingBar.start();
-            sessionStorage.clear();
-            $rootScope.isLogin = false;
-            cfpLoadingBar.complete();
-            $state.go('app.login');
+            delete $window.localStorage.isLoggedIn;
+            $rootScope.isLoggedIn = false;
+            $state.go('app.signin'); 
         }
     }
 })();
