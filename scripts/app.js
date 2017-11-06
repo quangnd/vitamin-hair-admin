@@ -23,6 +23,8 @@
         // 'ui.jp',
         'oc.lazyLoad',
         'cfp.loadingBar',
-        'toastr'
+        'toastr',
+        'satellizer',
+        'datatables'
       ]);
 })();
