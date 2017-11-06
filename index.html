@@ -30,7 +30,9 @@
   <link rel="stylesheet" href="assets/styles/font.css" type="text/css" />
   <!-- <base href="/">   -->
   <link rel='stylesheet' href='assets/angular-loading-bar/loading-bar.min.css' type='text/css' media='all' />
-  <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+  <link rel="stylesheet" href="assets/angular-toastr/angular-toastr.css" />
+  <link rel="stylesheet" href="libs/datatables/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="assets/angular-datatables/angular-datatables.min.css" />
 </head>
 <body ng-app="app" ng-controller="AppCtrl" class="{{app.setting.bg}}" ng-class="{'container': app.setting.boxed, 'ie': isIE,'smart': isSmart}">
   <div class="app" ui-view></div>
@@ -51,7 +53,9 @@
   <script src="libs/angular/angular-resource/angular-resource.js"></script>
   <script src="libs/angular/angular-sanitize/angular-sanitize.js"></script>
   <script src="libs/angular/angular-touch/angular-touch.js"></script>
-
+  <script src="libs/satellizer/satellizer.min.js"></script>
+  <script src="libs/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="libs/angular/angular-datatables/angular-datatables.min.js"></script>
   <!-- router -->
   <script src="libs/angular/angular-ui-router/release/angular-ui-router.js"></script>
   <!-- storage -->

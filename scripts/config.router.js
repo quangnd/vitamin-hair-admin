@@ -13,13 +13,23 @@
       .config(config);
 
       runBlock.$inject = ['$rootScope', '$state', '$stateParams'];
-      function runBlock($rootScope,   $state,   $stateParams) {
+      function runBlock($rootScope, $state, $stateParams) {
           $rootScope.$state = $state;
           $rootScope.$stateParams = $stateParams;
+
+          $rootScope.$on('$stateChangeSuccess', function (evt, toState, toParams, fromState, fromParams) {
+            if (toState.name !== 'app.signin' && toState.name !== 'app.forgot-pass') {
+              var isLoggedIn = localStorage !== undefined && localStorage.user !== undefined || false;
+
+              if(!isLoggedIn) {
+               $state.go('app.signin');
+              }
+            }
+          });
       }
 
-      config.$inject =  ['$stateProvider', '$urlRouterProvider', 'MODULE_CONFIG', '$locationProvider', 'toastrConfig'];
-      function config( $stateProvider,   $urlRouterProvider,   MODULE_CONFIG , $locationProvider, toastrConfig) {
+      config.$inject =  ['$stateProvider', '$urlRouterProvider', 'MODULE_CONFIG', '$locationProvider', 'toastrConfig', '$authProvider'];
+      function config( $stateProvider,   $urlRouterProvider,   MODULE_CONFIG , $locationProvider, toastrConfig, $authProvider) {
 
         angular.extend(toastrConfig, {
           autoDismiss: false,
@@ -37,6 +47,13 @@
             layout = 'views/layout/layout.'+l+'html';
             // dashboard = 'views/dashboard/dashboard.'+l+'html';
 
+        $authProvider.loginUrl = LOGIN_API;
+    
+        function loginRequired($location, $auth) {
+          if (!$auth.isAuthenticated()) {
+            $location.path('/app/account/signin');
+          }
+        }
         //$locationProvider.html5Mode(true);
         $urlRouterProvider
           .otherwise('/app/account/signin');
@@ -53,13 +70,13 @@
             resolve: load(['ui.bootstrap', 'scripts/controllers/bootstrap.js'])
           })
 
-            // .state('app.register', {
-            //     url: '/register',
-            //     templateUrl: 'apps/account/register/register.html',
-            //     data : { title: 'Register' },
-            //     controller: "RegisterCtrl",
-            //     resolve: load('apps/account/register/register.js')
-            // })
+            .state('app.userList', {
+                url: '/user-list',
+                templateUrl: 'apps/account/userList.html',
+                data : { title: 'User List' },
+                controller: "UserListCtrl",
+                resolve: load('apps/account/userList.js')
+            })
 
             .state('app.dashboard', {
                 url: '/dashboard',
@@ -88,8 +105,8 @@
 
         function load(srcs, callback) {
           return {
-              deps: ['$ocLazyLoad', '$q',
-                function( $ocLazyLoad, $q ){
+              deps: ['$ocLazyLoad', '$q', '$auth', '$state',
+                function( $ocLazyLoad, $q, $auth, $state){
                   var deferred = $q.defer();
                   var promise  = false;
                   srcs = angular.isArray(srcs) ? srcs : srcs.split(/\s+/);

@@ -12,9 +12,9 @@
         .module('app')
         .controller('AppCtrl', AppCtrl);
 
-    AppCtrl.$inject = ['$scope', '$localStorage', '$location', '$rootScope', '$anchorScroll', '$timeout', '$window', '$state', 'cfpLoadingBar'];
+    AppCtrl.$inject = ['$scope', '$localStorage', '$location', '$rootScope', '$anchorScroll', '$timeout', '$window', '$state', 'cfpLoadingBar', '$auth'];
 
-    function AppCtrl($scope, $localStorage, $location, $rootScope, $anchorScroll, $timeout, $window, $state, cfpLoadingBar) {
+    function AppCtrl($scope, $localStorage, $location, $rootScope, $anchorScroll, $timeout, $window, $state, cfpLoadingBar, $auth) {
         var vm = $scope;
         vm.isIE = isIE();
         vm.isSmart = isSmart();
@@ -141,9 +141,15 @@
         };
 
         $scope.logout = function () {
-            delete $window.localStorage.isLoggedIn;
-            $rootScope.isLoggedIn = false;
+            $auth.logout();
+            delete $window.localStorage.user;
+            delete $rootScope.currentUser;
+
             $state.go('app.signin'); 
         }
+
+        $scope.isAuthenticated = function() {
+            return $auth.isAuthenticated();
+        };
     }
 })();

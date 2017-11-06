@@ -16,18 +16,19 @@
       <div class="md-form-group float-label">
         <input type="password" class="md-input" ng-model="password" required>
         <label>Password</label>
-      </div>      
-      <div class="m-b-md">        
+      </div>
+      <!-- <div class="m-b-md">        
         <label class="md-check">
           <input type="checkbox"><i class="primary"></i> Keep me signed in
         </label>
-      </div>
+      </div> -->
       <button type="submit" ng-click="signin()" class="btn primary btn-block p-x-md">Sign in</button>
+      <div ng-if="messages.error" role="alert" class="text-danger mt-3">
+        <div ng-repeat="error in messages.error">{{error.msg}}</div>
+      </div>
     </form>
   </div>
-
-  <div class="p-v-lg text-center">
+  <!-- <div class="p-v-lg text-center">
     <div class="m-b"><a ui-sref="access.forgot-password" href="forgot-password.html" class="text-primary _600">Forgot password?</a></div>
-    <!-- <div>Do not have an account? <a ui-sref="access.signup" href="signup.html" class="text-primary _600">Sign up</a></div> -->
-  </div>
+  </div> -->
 </div>
